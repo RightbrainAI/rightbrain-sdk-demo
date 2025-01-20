@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@rightbrain/cli':
-        specifier: ^0.0.2
-        version: 0.0.2(@types/node@20.17.14)(typescript@5.7.3)
+        specifier: ^0.0.3
+        version: 0.0.3(@types/node@20.17.14)(typescript@5.7.3)
       '@rightbrain/sdk':
-        specifier: ^0.0.2
-        version: 0.0.2
+        specifier: ^0.0.3
+        version: 0.0.3
       next:
         specifier: 15.1.5
         version: 15.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -23,10 +23,16 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
+      simple-oauth2:
+        specifier: ^5.1.0
+        version: 5.1.0
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3
         version: 3.2.0
+      '@next/env':
+        specifier: ^15.1.5
+        version: 15.1.5
       '@types/node':
         specifier: ^20
         version: 20.17.14
@@ -36,6 +42,9 @@ importers:
       '@types/react-dom':
         specifier: ^19
         version: 19.0.3(@types/react@19.0.7)
+      '@types/simple-oauth2':
+        specifier: ^5.0.7
+        version: 5.0.7
       eslint:
         specifier: ^9
         version: 9.18.0(jiti@1.21.7)
@@ -342,12 +351,15 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
-  '@rightbrain/cli@0.0.2':
-    resolution: {integrity: sha512-bb0/vGU7fGI+F9+Tx9Ty/zJgqa19KPR9wLEK0fI+5yf6VOg8JEnwUVIh4pxWwL25BRPWOuv2LuZQ63wLfFzCFQ==}
+  '@rightbrain/cli@0.0.3':
+    resolution: {integrity: sha512-Tb+4hFYzhAexbAfmNRr1aBFpOPsEIK9xOVYBqEYPgGectZWeKIjRG5pQNaKvND7spP17BvUYZH8jHal3M+lXJw==}
     hasBin: true
 
   '@rightbrain/sdk@0.0.2':
     resolution: {integrity: sha512-lYi7EF5kSiaeYndinKrQuhc9gxDf8U2O61RVhGc2I5F8IlWFg+ruCql21/xGQGkqR+D8v7TJbgUnyfCGZQ2qHg==}
+
+  '@rightbrain/sdk@0.0.3':
+    resolution: {integrity: sha512-VyaGA9hfQneXX4tQutWeZmh1tyVAIeab/L03+xbuZXyrswkoIhHmlVBlx5n8lWOJJ932n2wxE9MybZfAMZCo5w==}
 
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
@@ -389,6 +401,9 @@ packages:
 
   '@types/react@19.0.7':
     resolution: {integrity: sha512-MoFsEJKkAtZCrC1r6CM8U22GzhG7u2Wir8ons/aCKH6MBdD1ibV24zOSSkdZVUKqN5i396zG5VKLYZ3yaUZdLA==}
+
+  '@types/simple-oauth2@5.0.7':
+    resolution: {integrity: sha512-8JbWVJbiTSBQP/7eiyGKyXWAqp3dKQZpaA+pdW16FCi32ujkzRMG8JfjoAzdWt6W8U591ZNdHcPtP2D7ILTKuA==}
 
   '@typescript-eslint/eslint-plugin@8.21.0':
     resolution: {integrity: sha512-eTH+UOR4I7WbdQnG4Z48ebIA6Bgi7WO8HvFEneeYBxG8qCOYgTOFPSg6ek9ITIDvGjDQzWHcoWHCDO2biByNzA==}
@@ -2005,7 +2020,7 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
-  '@rightbrain/cli@0.0.2(@types/node@20.17.14)(typescript@5.7.3)':
+  '@rightbrain/cli@0.0.3(@types/node@20.17.14)(typescript@5.7.3)':
     dependencies:
       '@rightbrain/sdk': 0.0.2
       commander: 11.1.0
@@ -2020,6 +2035,8 @@ snapshots:
       - typescript
 
   '@rightbrain/sdk@0.0.2': {}
+
+  '@rightbrain/sdk@0.0.3': {}
 
   '@rtsao/scc@1.1.0': {}
 
@@ -2056,6 +2073,8 @@ snapshots:
   '@types/react@19.0.7':
     dependencies:
       csstype: 3.1.3
+
+  '@types/simple-oauth2@5.0.7': {}
 
   '@typescript-eslint/eslint-plugin@8.21.0(@typescript-eslint/parser@8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3)':
     dependencies:

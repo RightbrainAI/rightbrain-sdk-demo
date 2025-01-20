@@ -9,17 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@rightbrain/cli": "^0.0.2",
-    "@rightbrain/sdk": "^0.0.2",
+    "@rightbrain/cli": "^0.0.3",
+    "@rightbrain/sdk": "^0.0.3",
     "next": "15.1.5",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "simple-oauth2": "^5.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@next/env": "^15.1.5",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/simple-oauth2": "^5.0.7",
     "eslint": "^9",
     "eslint-config-next": "15.1.5",
     "postcss": "^8",
