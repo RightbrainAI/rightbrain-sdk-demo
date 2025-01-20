@@ -1,36 +1,177 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rightbrain SDK Demo
 
-## Getting Started
+This repository demonstrates how to integrate the Rightbrain SDK and CLI into a Next.js application. It showcases a simple product listing generator that uses Rightbrain's AI capabilities.
 
-First, run the development server:
+## Prerequisites
+
+- Node.js 18 or later
+- npm, yarn, or pnpm
+- A Rightbrain account with API credentials
+
+## Setup
+
+1. Clone this repository
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Copy `.env.example` to `.env.local` and fill in your Rightbrain credentials:
+
+```bash
+RB_ORG_ID=your_org_id
+RB_PROJECT_ID=your_project_id
+RB_OAUTH2_URL=your_oauth_url
+RB_API_URL=your_api_url
+RB_CLIENT_ID=your_client_id
+RB_CLIENT_SECRET=your_client_secret
+RB_OAUTH2_TOKEN_PATH=/oauth/token
+```
+
+## Key Components
+
+### 1. CLI Configuration
+
+The Rightbrain CLI is configured using `rightbrain.config.ts`. This file specifies your organization details and API credentials:
+
+```typescript
+// rightbrain.config.ts
+const config: Config = {
+  orgId: combinedEnv.RB_ORG_ID as string,
+  projectId: combinedEnv.RB_PROJECT_ID as string,
+  oauthUrl: combinedEnv.RB_OAUTH2_URL as string,
+  apiUrl: combinedEnv.RB_API_URL as string,
+  clientId: combinedEnv.RB_CLIENT_ID as string,
+  clientSecret: combinedEnv.RB_CLIENT_SECRET as string,
+  output: "./src/generated",
+};
+```
+
+The config uses Next.js's environment loading to safely access your credentials. The CLI will use this configuration to generate type-safe SDK code in the `src/generated` directory.
+
+### 2. Authentication
+
+OAuth2 authentication is handled in the `access-token.ts` utility:
+
+```typescript
+// src/utils/access-token.ts
+export const getAccessToken = async (): Promise<AccessToken> => {
+  if (
+    !process.env.RB_OAUTH2_URL ||
+    !process.env.RB_CLIENT_ID ||
+    !process.env.RB_OAUTH2_TOKEN_PATH ||
+    !process.env.RB_CLIENT_SECRET
+  ) {
+    throw new Error(
+      "RB_OAUTH2_URL, RB_CLIENT_ID, RB_OAUTH2_TOKEN_PATH, and RB_CLIENT_SECRET must be set"
+    );
+  }
+
+  if (!accessToken || accessToken.expired()) {
+    const client = new ClientCredentials({
+      auth: {
+        tokenHost: process.env.RB_OAUTH2_URL,
+        tokenPath: process.env.RB_OAUTH2_TOKEN_PATH,
+      },
+      client: {
+        id: process.env.RB_CLIENT_ID,
+        secret: process.env.RB_CLIENT_SECRET,
+      },
+      http: { json: "force" },
+    });
+
+    accessToken = await client.getToken({});
+  }
+
+  return accessToken;
+};
+```
+
+This implementation uses the client credentials flow and caches the token. In a production environment, you should:
+
+- Add your own authentication layer before allowing access to Rightbrain API routes
+- Implement proper token storage and refresh mechanisms
+- Add rate limiting and error handling
+
+### 3. API Route Handler
+
+The application uses Next.js App Router to create an API route that interfaces with the Rightbrain SDK:
+
+```typescript
+// src/app/tasks/product-listing/route.ts
+export async function POST(request: Request) {
+  // Add your own auth logic here to ensure the user has access to the project
+  const accessToken = await getAccessToken();
+
+  const body = await request.json();
+  const product_name = body.product_name;
+  const image = body.image;
+
+  if (!product_name || !image) {
+    return new Response("Missing product_name or image in request body", {
+      status: 400,
+    });
+  }
+
+  const rightbrain = RightBrainClient.getInstance({
+    accessToken: accessToken.token.access_token as string,
+    baseUrl: process.env.RB_API_URL as string,
+    organizationId: process.env.RB_ORG_ID as string,
+    projectId: process.env.RB_PROJECT_ID as string,
+  });
+
+  const response = await rightbrain.runGenerateImageBasedProductListing({
+    product_name,
+  });
+
+  return Response.json(response);
+}
+```
+
+This route handler:
+
+- Validates the incoming request
+- Obtains an access token
+- Initializes the Rightbrain client
+- Makes the API call and returns the response
+
+### 4. React Hook
+
+A custom hook provides a clean interface for components to interact with the API: [useGenerateImageBasedProductListing](./src/hooks/use-generate-image-based-product-listing.ts)
+
+### 5. UI Component
+
+The form component demonstrates how to use the hook and handle the API response:
+[ProductListingForm](./src/components/product-listing-form.tsx)
+
+## Development
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [http://localhost:3000](http://localhost:3000) to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Important Notes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Security**: This is a demo implementation. In production:
+
+   - Add proper authentication
+   - Implement secure token management
+   - Add rate limiting
+   - Add proper error handling
+   - Add input validation
+   - Add proper CORS configuration
+
+2. **Generated Code**: The `src/generated` directory contains SDK code generated by the Rightbrain CLI. Don't modify these files directly.
+
+3. **Environment Variables**: Never commit your `.env.local` file. Keep your credentials secure.
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Rightbrain Documentation](https://docs.rightbrain.ai/intro)
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Rightbrain Case Studies](https://rightbrain.ai/#case-studies)
