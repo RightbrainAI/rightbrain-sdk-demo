@@ -10,29 +10,29 @@ export function useGenerateImageBasedProductListing() {
   const [error, setError] = useState<Error | null>(null);
 
   const generateListing = async ({
-    productName,
-    image,
+    product_name,
+    taskFile,
   }: InputGenerateImageBasedProductListing) => {
     setIsLoading(true);
     setError(null);
 
     try {
+      const formData = new FormData();
+      formData.append("product_name", product_name);
+      if (taskFile) {
+        formData.append("taskFile", taskFile);
+      }
+
       const response = await fetch("/tasks/product-listing", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          product_name: productName,
-          image: image,
-        }),
+        body: formData,
       });
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      const data: { response: OutputGenerateImageBasedProductListing } =
+      const data: OutputGenerateImageBasedProductListing =
         await response.json();
       return data;
     } catch (err) {

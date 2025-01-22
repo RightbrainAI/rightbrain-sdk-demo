@@ -1,16 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import {
-  type OutputGenerateImageBasedProductListing,
-  useGenerateImageBasedProductListing,
-} from "@/hooks/use-generate-image-based-product-listing";
+import { useGenerateImageBasedProductListing } from "@/hooks/use-generate-image-based-product-listing";
+import { type OutputGenerateImageBasedProductListing } from "@/generated";
 
 export function ProductListingForm() {
   const { generateListing, isLoading, error } =
     useGenerateImageBasedProductListing();
-  const [listing, setListing] =
-    useState<OutputGenerateImageBasedProductListing | null>(null);
+  const [listing, setListing] = useState<
+    OutputGenerateImageBasedProductListing["response"] | null
+  >(null);
 
   return (
     <div>
@@ -21,15 +20,15 @@ export function ProductListingForm() {
           const formData = new FormData(e.currentTarget);
 
           const product_name = formData.get("product_name");
-          const imageFile = formData.get("image") as File;
+          const taskFile = formData.get("taskFile") as File;
 
-          if (!product_name || !imageFile) {
+          if (!product_name || !taskFile) {
             return;
           }
 
           const response = await generateListing({
-            productName: product_name as string,
-            image: imageFile,
+            product_name: product_name as string,
+            taskFile: taskFile,
           });
 
           setListing(response.response);
@@ -56,7 +55,7 @@ export function ProductListingForm() {
           <input
             type="file"
             id="image"
-            name="image"
+            name="taskFile"
             required
             accept="image/*"
             className="border rounded-md px-3 py-2 bg-transparent"
