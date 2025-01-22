@@ -1,18 +1,26 @@
 import Image from "next/image";
-import { ProductListingForm } from "@/components/product-listing-form";
+
+import { IndustryTabs } from "@/components/industry-tabs";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <h1 className="text-4xl font-bold">Rightbrain</h1>
-        <p>
-          This is a demo of the Rightbrain SDK. It is a simple example of how to
-          use the SDK to generate a product listing.
+    <div className="p-8 pb-20 h-full">
+      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start h-full">
+        <h1 className="text-4xl font-bold flex items-center gap-2 w-full justify-center">
+          Rightbrain
+          <Image src="/logo.png" alt="Rightbrain Logo" width={64} height={64} />
+        </h1>
+        <p className="text-muted-foreground text-center w-full">
+          A demo implementation of the Rightbrain SDK with Next.js API routes
+          and OAuth2.
         </p>
-        <p>The SDK is available for React, Next.js, and Node.js.</p>
+        <p className="text-muted-foreground text-center w-full">
+          Select an industry below to try it out.
+        </p>
 
-        <ProductListingForm />
+        <div className="w-full max-w-5xl mx-auto h-full overflow-y-auto">
+          <IndustryTabs />
+        </div>
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
         <a
