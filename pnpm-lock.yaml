@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@rightbrain/cli':
-        specifier: ^0.0.3
-        version: 0.0.3(@types/node@20.17.14)(typescript@5.7.3)
+        specifier: ^0.0.4
+        version: 0.0.4(@types/node@20.17.14)(typescript@5.7.3)
       '@rightbrain/sdk':
-        specifier: ^0.0.3
-        version: 0.0.3
+        specifier: ^0.0.4
+        version: 0.0.4
       next:
         specifier: 15.1.5
         version: 15.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -351,15 +351,15 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
-  '@rightbrain/cli@0.0.3':
-    resolution: {integrity: sha512-Tb+4hFYzhAexbAfmNRr1aBFpOPsEIK9xOVYBqEYPgGectZWeKIjRG5pQNaKvND7spP17BvUYZH8jHal3M+lXJw==}
+  '@rightbrain/cli@0.0.4':
+    resolution: {integrity: sha512-ipgPp28AcI0J5kwQhUzEk/AMSW2rrP0DAPYqo1Gqjaz/Iz1ZBVCHXZFQoBa/MacOjE7BeghMK82G7gL11WwAuw==}
     hasBin: true
 
   '@rightbrain/sdk@0.0.2':
     resolution: {integrity: sha512-lYi7EF5kSiaeYndinKrQuhc9gxDf8U2O61RVhGc2I5F8IlWFg+ruCql21/xGQGkqR+D8v7TJbgUnyfCGZQ2qHg==}
 
-  '@rightbrain/sdk@0.0.3':
-    resolution: {integrity: sha512-VyaGA9hfQneXX4tQutWeZmh1tyVAIeab/L03+xbuZXyrswkoIhHmlVBlx5n8lWOJJ932n2wxE9MybZfAMZCo5w==}
+  '@rightbrain/sdk@0.0.4':
+    resolution: {integrity: sha512-1X82bHUF8SGMAASWasSgovVBQuGy3VNsc5sqgcW4VD0oSsFN1w2NI4tb56K938n8LXcrDDQZQ7sH4G0ztsJN4Q==}
 
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
@@ -2020,7 +2020,7 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
-  '@rightbrain/cli@0.0.3(@types/node@20.17.14)(typescript@5.7.3)':
+  '@rightbrain/cli@0.0.4(@types/node@20.17.14)(typescript@5.7.3)':
     dependencies:
       '@rightbrain/sdk': 0.0.2
       commander: 11.1.0
@@ -2036,7 +2036,7 @@ snapshots:
 
   '@rightbrain/sdk@0.0.2': {}
 
-  '@rightbrain/sdk@0.0.3': {}
+  '@rightbrain/sdk@0.0.4': {}
 
   '@rtsao/scc@1.1.0': {}
 

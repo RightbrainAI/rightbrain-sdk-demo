@@ -9,8 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@rightbrain/cli": "^0.0.3",
-    "@rightbrain/sdk": "^0.0.3",
+    "@rightbrain/cli": "^0.0.4",
+    "@rightbrain/sdk": "^0.0.4",
     "next": "15.1.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
