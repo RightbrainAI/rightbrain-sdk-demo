@@ -29,7 +29,7 @@ const industries = [
 
 export function IndustryTabs() {
   return (
-    <Tabs defaultValue="marketplace" className="w-full max-w-4xl">
+    <Tabs defaultValue="fintech" className="w-full max-w-4xl mx-auto">
       <TabsList className="grid w-full grid-cols-4">
         {industries.map((industry) => (
           <TabsTrigger key={industry.id} value={industry.id}>
