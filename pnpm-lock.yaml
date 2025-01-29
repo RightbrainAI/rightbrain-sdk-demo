@@ -21,11 +21,11 @@ importers:
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.0.3(@types/react@19.0.7))(@types/react@19.0.7)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@rightbrain/cli':
-        specifier: ^0.0.4
-        version: 0.0.4(@types/node@20.17.14)(typescript@5.7.3)
+        specifier: ^0.0.5
+        version: 0.0.5(@types/node@20.17.14)(typescript@5.7.3)
       '@rightbrain/sdk':
-        specifier: ^0.0.4
-        version: 0.0.4
+        specifier: ^0.0.5
+        version: 0.0.5
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -542,15 +542,12 @@ packages:
       '@types/react':
         optional: true
 
-  '@rightbrain/cli@0.0.4':
-    resolution: {integrity: sha512-ipgPp28AcI0J5kwQhUzEk/AMSW2rrP0DAPYqo1Gqjaz/Iz1ZBVCHXZFQoBa/MacOjE7BeghMK82G7gL11WwAuw==}
+  '@rightbrain/cli@0.0.5':
+    resolution: {integrity: sha512-LuoVmVBAQcla/qntttdVnsbKK7Df/4hQb3rbKUjx76YKfqePnaQ4EYtTomebBJBx5RI3E6WWbXuIbjrax2+ttg==}
     hasBin: true
 
-  '@rightbrain/sdk@0.0.2':
-    resolution: {integrity: sha512-lYi7EF5kSiaeYndinKrQuhc9gxDf8U2O61RVhGc2I5F8IlWFg+ruCql21/xGQGkqR+D8v7TJbgUnyfCGZQ2qHg==}
-
-  '@rightbrain/sdk@0.0.4':
-    resolution: {integrity: sha512-1X82bHUF8SGMAASWasSgovVBQuGy3VNsc5sqgcW4VD0oSsFN1w2NI4tb56K938n8LXcrDDQZQ7sH4G0ztsJN4Q==}
+  '@rightbrain/sdk@0.0.5':
+    resolution: {integrity: sha512-AUBn+5hf7g1mXD3q76+zzWFmCrMhteYDO3VLOtpciTY+ZOThRiQthCr54Kz5g3AlzxS2KmpbPct4EeUTW7jmzg==}
 
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
@@ -2370,9 +2367,9 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.0.7
 
-  '@rightbrain/cli@0.0.4(@types/node@20.17.14)(typescript@5.7.3)':
+  '@rightbrain/cli@0.0.5(@types/node@20.17.14)(typescript@5.7.3)':
     dependencies:
-      '@rightbrain/sdk': 0.0.2
+      '@rightbrain/sdk': 0.0.5
       commander: 11.1.0
       cosmiconfig: 8.3.6(typescript@5.7.3)
       cosmiconfig-typescript-loader: 5.1.0(@types/node@20.17.14)(cosmiconfig@8.3.6(typescript@5.7.3))(typescript@5.7.3)
@@ -2384,9 +2381,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@rightbrain/sdk@0.0.2': {}
-
-  '@rightbrain/sdk@0.0.4': {}
+  '@rightbrain/sdk@0.0.5': {}
 
   '@rtsao/scc@1.1.0': {}
 
