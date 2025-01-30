@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "populate-tasks": "chmod +x scripts/setup-tasks.sh && ./scripts/setup-tasks.sh"
+    "populate-tasks": "chmod +x scripts/setup-tasks.sh && ./scripts/setup-tasks.sh",
+    "generate-sdk": "rightbrain generate"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

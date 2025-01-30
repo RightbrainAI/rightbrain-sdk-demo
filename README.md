@@ -32,7 +32,13 @@ RB_OAUTH2_TOKEN_PATH=/oauth/token
 4. Run the setup script to create the required Rightbrain tasks:
 
 ```bash
-npm run setup
+npm run populate-tasks
+```
+
+5. Run the generate script to generate the rightbrain client via the CLI
+
+```bash
+npm run generate-sdk
 ```
 
 ## Key Components
