@@ -29,6 +29,12 @@ RB_CLIENT_SECRET=your_client_secret
 RB_OAUTH2_TOKEN_PATH=/oauth/token
 ```
 
+4. Run the setup script to create the required Rightbrain tasks:
+
+```bash
+npm run setup
+```
+
 ## Key Components
 
 ### 1. CLI Configuration

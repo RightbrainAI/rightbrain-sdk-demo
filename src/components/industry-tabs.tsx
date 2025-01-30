@@ -15,22 +15,12 @@ const industries = [
     label: "Marketplace",
     description: "E-commerce and marketplace automation",
   },
-  {
-    id: "tech",
-    label: "Tech",
-    description: "Technology and SaaS solutions",
-  },
-  {
-    id: "insurance",
-    label: "Insurance",
-    description: "Insurance and insurtech applications",
-  },
 ];
 
 export function IndustryTabs() {
   return (
     <Tabs defaultValue="fintech" className="w-full max-w-4xl mx-auto">
-      <TabsList className="grid w-full grid-cols-4">
+      <TabsList className="grid w-full grid-cols-2">
         {industries.map((industry) => (
           <TabsTrigger key={industry.id} value={industry.id}>
             {industry.label}
