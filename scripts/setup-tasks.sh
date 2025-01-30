@@ -27,4 +27,14 @@ npx rightbrain create-task \
   --output-format '{"valid":{"type":"bool","description":"Is the photo valid"},"reason":{"type":"str","description":"Reason why the photo is or is not valid"}}' \
   --image-required
 
+# PRD Analysis Task
+echo "📋 Creating PRD Analysis task..."
+npx rightbrain create-task \
+  --name "PRD Analysis" \
+  --description "A task to analyze PRD documents and suggest Rightbrain tasks." \
+  --system-prompt "You are a product and AI integration specialist. Your role is to analyze product requirement documents and identify opportunities for AI task automation using Rightbrain. Consider multimodal inputs (text/images), structured outputs, and integration points. Focus on practical, implementable solutions that align with Rightbrain's capabilities for text and image processing." \
+  --user-prompt "Review the product requirement document {prd}. Based on your review, propose specific and relevant use cases for the Rightbrain API." \
+  --model "gpt-4" \
+  --output-format '{"use_cases":{"type":"list","description":"Names of potential use cases"},"input_type":{"type":"list","description":"Types of inputs required (text, image)"},"output_format":{"type":"list","description":"Desired outputs for each task"},"task_description":{"type":"list","description":"Brief description of each task"}}'
+
 echo "✅ Tasks setup complete!"
