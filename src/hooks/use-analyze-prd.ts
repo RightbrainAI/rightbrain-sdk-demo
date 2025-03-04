@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { InputPrdAnalysis, OutputPrdAnalysis } from "@/generated";
+import { Input_prd_analysis, Output_prd_analysis } from "@/generated";
 
 export function useAnalyzePrd() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
 
-  const analyzePrd = async ({ prd }: InputPrdAnalysis) => {
+  const analyzePrd = async ({ prd }: Input_prd_analysis) => {
     setIsLoading(true);
     setError(null);
 
@@ -22,7 +22,7 @@ export function useAnalyzePrd() {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      const data: OutputPrdAnalysis = await response.json();
+      const data: Output_prd_analysis = await response.json();
       return data;
     } catch (err) {
       setError(

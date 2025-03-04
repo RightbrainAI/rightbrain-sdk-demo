@@ -1,14 +1,16 @@
 import { useState } from "react";
 import {
-  type InputProfileImageVerification,
-  type OutputProfileImageVerification,
+  type Input_profile_image_verification,
+  type Output_profile_image_verification,
 } from "@/generated";
 
 export function useVerifyProfilePhoto() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
 
-  const verifyPhoto = async ({ taskFile }: InputProfileImageVerification) => {
+  const verifyPhoto = async ({
+    taskFile,
+  }: Input_profile_image_verification) => {
     setIsLoading(true);
     setError(null);
 
@@ -27,7 +29,7 @@ export function useVerifyProfilePhoto() {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      const data: OutputProfileImageVerification = await response.json();
+      const data: Output_profile_image_verification = await response.json();
       return data;
     } catch (err) {
       setError(

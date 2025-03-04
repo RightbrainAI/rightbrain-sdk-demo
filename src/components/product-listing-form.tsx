@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useGenerateImageBasedProductListing } from "@/hooks/use-generate-image-based-product-listing";
-import { type OutputGenerateImageBasedProductListing } from "@/generated";
+import { type Output_generate_image_based_product_listing } from "@/generated";
 import { Input } from "@/components/ui/input";
 import { Label } from "./ui/label";
 import { Button } from "./ui/button";
@@ -14,7 +14,7 @@ export function ProductListingForm() {
   const { generateListing, isLoading, error } =
     useGenerateImageBasedProductListing();
   const [listing, setListing] = useState<
-    OutputGenerateImageBasedProductListing["response"] | null
+    Output_generate_image_based_product_listing["response"] | null
   >(null);
   const [isProductCardView, setIsProductCardView] = useState(false);
 

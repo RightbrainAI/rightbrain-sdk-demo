@@ -27,7 +27,7 @@ export async function POST(request: Request) {
       type: taskFile.type,
     });
 
-    const response = await rightbrain.runGenerateImageBasedProductListing(
+    const response = await rightbrain.run_generate_image_based_product_listing(
       {
         product_name,
       },
