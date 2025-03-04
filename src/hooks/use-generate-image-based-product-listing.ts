@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 import {
-  type InputGenerateImageBasedProductListing,
-  type OutputGenerateImageBasedProductListing,
+  type Input_generate_image_based_product_listing,
+  type Output_generate_image_based_product_listing,
 } from "@/generated";
 
 export function useGenerateImageBasedProductListing() {
@@ -12,7 +12,7 @@ export function useGenerateImageBasedProductListing() {
   const generateListing = async ({
     product_name,
     taskFile,
-  }: InputGenerateImageBasedProductListing) => {
+  }: Input_generate_image_based_product_listing) => {
     setIsLoading(true);
     setError(null);
 
@@ -32,7 +32,7 @@ export function useGenerateImageBasedProductListing() {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      const data: OutputGenerateImageBasedProductListing =
+      const data: Output_generate_image_based_product_listing =
         await response.json();
       return data;
     } catch (err) {

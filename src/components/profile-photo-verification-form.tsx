@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 import { useVerifyProfilePhoto } from "@/hooks/use-verify-profile-photo";
-import { type OutputProfileImageVerification } from "@/generated";
+import { type Output_profile_image_verification } from "@/generated";
 import { Input } from "@/components/ui/input";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
@@ -13,7 +13,7 @@ export function ProfilePhotoVerificationForm() {
   const [previewUrl, setPreviewUrl] = useState<string>("");
   const { verifyPhoto, isLoading, error } = useVerifyProfilePhoto();
   const [result, setResult] = useState<
-    OutputProfileImageVerification["response"] | null
+    Output_profile_image_verification["response"] | null
   >(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 

@@ -25,7 +25,7 @@ export async function POST(request: Request) {
       type: taskFile.type,
     });
 
-    const response = await rightbrain.runProfileImageVerification(
+    const response = await rightbrain.run_profile_image_verification(
       {},
       fileBlob as File
     );
