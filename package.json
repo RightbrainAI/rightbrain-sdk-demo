@@ -15,8 +15,8 @@
     "@radix-ui/react-label": "^2.1.1",
     "@radix-ui/react-slot": "^1.1.1",
     "@radix-ui/react-tabs": "^1.1.2",
-    "@rightbrain/cli": "^0.0.8",
-    "@rightbrain/sdk": "^0.0.8",
+    "@rightbrain/cli": "^0.1.0",
+    "@rightbrain/sdk": "^0.1.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.473.0",
@@ -31,7 +31,6 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@next/env": "^15.1.5",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

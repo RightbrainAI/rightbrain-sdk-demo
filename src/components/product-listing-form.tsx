@@ -1,20 +1,20 @@
 "use client";
 
-import { useState } from "react";
-import { useGenerateImageBasedProductListing } from "@/hooks/use-generate-image-based-product-listing";
-import { type Output_generate_image_based_product_listing } from "@/generated";
 import { Input } from "@/components/ui/input";
-import { Label } from "./ui/label";
+import { type OutputGenerateImageBasedProductListing } from "@/generated";
+import { useGenerateImageBasedProductListing } from "@/hooks/use-generate-image-based-product-listing";
+import { useState } from "react";
+import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
-import { Badge } from "./ui/badge";
+import { Label } from "./ui/label";
 
 export function ProductListingForm() {
   const [image, setImage] = useState<File | null>(null);
   const { generateListing, isLoading, error } =
     useGenerateImageBasedProductListing();
   const [listing, setListing] = useState<
-    Output_generate_image_based_product_listing["response"] | null
+    OutputGenerateImageBasedProductListing["response"] | null
   >(null);
   const [isProductCardView, setIsProductCardView] = useState(false);
 
@@ -46,7 +46,7 @@ export function ProductListingForm() {
 
             const response = await generateListing({
               product_name: product_name as string,
-              taskFile: taskFile,
+              file: taskFile,
             });
             setImage(taskFile);
 
@@ -107,6 +107,7 @@ function ProductCardView({
   return (
     <Card className="grid w-full grid-cols-1 items-start gap-x-6 gap-y-8 sm:grid-cols-12 lg:gap-x-8 relative p-2">
       <div className="sm:col-span-4 lg:col-span-5 overflow-hidden">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           alt={product.name}
           src={product.image}
