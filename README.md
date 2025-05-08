@@ -64,7 +64,7 @@ The config uses Next.js's environment loading to safely access your credentials.
 
 ### 2. Authentication
 
-OAuth2 authentication is handled in the `access-token.ts` utility:
+You can use either your RightBrain API key or OAuth2 authentication, which is handled in the `access-token.ts` utility:
 
 ```typescript
 // src/utils/access-token.ts
@@ -134,7 +134,7 @@ export async function POST(request: Request) {
   });
 
   const response = await rightbrain.runGenerateImageBasedProductListing({
-    product_name,
+    inputs: { product_name },
   });
 
   return Response.json(response);

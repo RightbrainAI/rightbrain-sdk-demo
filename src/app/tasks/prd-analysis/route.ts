@@ -21,8 +21,8 @@ export async function POST(request: Request) {
       projectId: process.env.RB_PROJECT_ID as string,
     });
 
-    const response = await rightbrain.run_prd_analysis({
-      prd,
+    const response = await rightbrain.runPRDAnalysis({
+      inputs: { prd },
     });
 
     return Response.json(response);

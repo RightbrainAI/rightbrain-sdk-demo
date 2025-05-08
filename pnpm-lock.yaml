@@ -21,11 +21,11 @@ importers:
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.0.3(@types/react@19.0.7))(@types/react@19.0.7)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@rightbrain/cli':
-        specifier: ^0.0.8
-        version: 0.0.8(@types/node@20.17.14)(typescript@5.7.3)
+        specifier: ^0.1.0
+        version: 0.1.0(@types/node@20.17.14)(typescript@5.7.3)
       '@rightbrain/sdk':
-        specifier: ^0.0.8
-        version: 0.0.8
+        specifier: ^0.1.0
+        version: 0.1.0
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -63,9 +63,6 @@ importers:
       '@eslint/eslintrc':
         specifier: ^3
         version: 3.2.0
-      '@next/env':
-        specifier: ^15.1.5
-        version: 15.1.5
       '@types/node':
         specifier: ^20
         version: 20.17.14
@@ -542,12 +539,12 @@ packages:
       '@types/react':
         optional: true
 
-  '@rightbrain/cli@0.0.8':
-    resolution: {integrity: sha512-UyqV4GFlC9j0OI7iFN/AEFsIq/4dgAOUCBbl6WHgG8wHotZmTq1/9al//Vkeicq0FoI9/UbOYZ3aG8I3SiLrOQ==}
+  '@rightbrain/cli@0.1.0':
+    resolution: {integrity: sha512-X87NPT+iwQjhg0xYfoU00P1YLoQtjEffEiJWp58eJH1ZmgufDdiDbQJa4Jt5VTkKhlS0OKDCbtncxkvaMWoZnA==}
     hasBin: true
 
-  '@rightbrain/sdk@0.0.8':
-    resolution: {integrity: sha512-5ufIYYvk/l1Y7sFNADyUDRjcQSqrW9pb68Le/vl9Vx6kT5k/y460CfAdUgBPXey7MnCWq3WYPm7CColiRnEkvA==}
+  '@rightbrain/sdk@0.1.0':
+    resolution: {integrity: sha512-PrEweA/bzyAVRhvaMclS499acDxI+weidCIQfHaeLhe/spAkgkq82rqzwgIJj8eXenFOWjCpiwyt7GvgH56jdQ==}
 
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
@@ -905,6 +902,14 @@ packages:
   doctrine@2.1.0:
     resolution: {integrity: sha512-35mSku4ZXK0vfCuHEDAwt55dg2jNajHZ1odvF+8SSr82EsZY4QmXfuWso8oEd8zRhVObSN18aM0CjSdoBX7zIw==}
     engines: {node: '>=0.10.0'}
+
+  dotenv-expand@12.0.2:
+    resolution: {integrity: sha512-lXpXz2ZE1cea1gL4sz2Ipj8y4PiVjytYr3Ij0SWoms1PGxIv7m2CRKuRuCRtHdVuvM/hNJPMxt5PbhboNC4dPQ==}
+    engines: {node: '>=12'}
+
+  dotenv@16.5.0:
+    resolution: {integrity: sha512-m/C+AwOAr9/W1UOIZUo232ejMNnJAJtYQjUbHoNTBNTJSvqzzDh7vnrei3o3r3m9blf6ZoDkvcw0VmozNRFJxg==}
+    engines: {node: '>=12'}
 
   dunder-proto@1.0.1:
     resolution: {integrity: sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==}
@@ -1386,6 +1391,9 @@ packages:
     resolution: {integrity: sha512-ZZow9HBI5O6EPgSJLUb8n2NKgmVWTwCvHGwFuJlMjvLFqlGG6pjirPhtdsseaLZjSibD8eegzmYpUZwoIlj2cQ==}
     engines: {node: '>=4.0'}
 
+  just-pascal-case@3.2.0:
+    resolution: {integrity: sha512-B0PW5mgJrsGmXdvDLxC2Kdfyie74m+mRO+iCjJ+Es0Jl5kcQwVfB0qb/qiDOCE3m0XUOo1SdZBWzUlNCO9zreg==}
+
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
 
@@ -1462,6 +1470,9 @@ packages:
     resolution: {integrity: sha512-WNLf5Sd8oZxOm+TzppcYk8gVOgP+l58xNy58D0nbUnOxOWRWvlcCV4kUF7ltmI6PsrLl/BgKEyS4mqsGChFN0w==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
+
+  nanospinner@1.2.2:
+    resolution: {integrity: sha512-Zt/AmG6qRU3e+WnzGGLuMCEAO/dAu45stNbHY223tUxldaDAeE+FxSPsd9Q+j+paejmm0ZbrNVs5Sraqy3dRxA==}
 
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
@@ -1643,6 +1654,11 @@ packages:
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
+
+  prettier@3.5.3:
+    resolution: {integrity: sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw==}
+    engines: {node: '>=14'}
+    hasBin: true
 
   prop-types@15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
@@ -1994,8 +2010,8 @@ packages:
   zod@3.22.4:
     resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
 
-  zod@3.23.8:
-    resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
+  zod@3.24.4:
+    resolution: {integrity: sha512-OdqJE9UDRPwWsrHjLN2F8bPxvwJBK22EHLWtanu0LSYr5YqzsaaW3RMgmjwr8Rypg5k+meEJdSPXJZXE/yqOMg==}
 
 snapshots:
 
@@ -2367,21 +2383,26 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.0.7
 
-  '@rightbrain/cli@0.0.8(@types/node@20.17.14)(typescript@5.7.3)':
+  '@rightbrain/cli@0.1.0(@types/node@20.17.14)(typescript@5.7.3)':
     dependencies:
-      '@rightbrain/sdk': 0.0.8
+      '@rightbrain/sdk': 0.1.0
       commander: 11.1.0
       cosmiconfig: 8.3.6(typescript@5.7.3)
       cosmiconfig-typescript-loader: 5.1.0(@types/node@20.17.14)(cosmiconfig@8.3.6(typescript@5.7.3))(typescript@5.7.3)
+      dotenv: 16.5.0
+      dotenv-expand: 12.0.2
+      just-pascal-case: 3.2.0
+      nanospinner: 1.2.2
       openapi-types: 12.1.3
+      prettier: 3.5.3
       simple-oauth2: 5.1.0
-      zod: 3.23.8
+      zod: 3.24.4
     transitivePeerDependencies:
       - '@types/node'
       - supports-color
       - typescript
 
-  '@rightbrain/sdk@0.0.8': {}
+  '@rightbrain/sdk@0.1.0': {}
 
   '@rtsao/scc@1.1.0': {}
 
@@ -2779,6 +2800,12 @@ snapshots:
   doctrine@2.1.0:
     dependencies:
       esutils: 2.0.3
+
+  dotenv-expand@12.0.2:
+    dependencies:
+      dotenv: 16.5.0
+
+  dotenv@16.5.0: {}
 
   dunder-proto@1.0.1:
     dependencies:
@@ -3437,6 +3464,8 @@ snapshots:
       object.assign: 4.1.7
       object.values: 1.2.1
 
+  just-pascal-case@3.2.0: {}
+
   keyv@4.5.4:
     dependencies:
       json-buffer: 3.0.1
@@ -3502,6 +3531,10 @@ snapshots:
       thenify-all: 1.6.0
 
   nanoid@3.3.8: {}
+
+  nanospinner@1.2.2:
+    dependencies:
+      picocolors: 1.1.1
 
   natural-compare@1.4.0: {}
 
@@ -3680,6 +3713,8 @@ snapshots:
       source-map-js: 1.2.1
 
   prelude-ls@1.2.1: {}
+
+  prettier@3.5.3: {}
 
   prop-types@15.8.1:
     dependencies:
@@ -4159,4 +4194,4 @@ snapshots:
 
   zod@3.22.4: {}
 
-  zod@3.23.8: {}
+  zod@3.24.4: {}

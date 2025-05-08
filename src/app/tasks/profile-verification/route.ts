@@ -25,10 +25,10 @@ export async function POST(request: Request) {
       type: taskFile.type,
     });
 
-    const response = await rightbrain.run_profile_image_verification(
-      {},
-      fileBlob as File
-    );
+    const response = await rightbrain.runProfileImageVerification({
+      files: [fileBlob as File],
+      inputs: {},
+    });
 
     return Response.json(response);
   } catch (error) {

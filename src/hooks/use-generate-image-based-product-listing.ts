@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 import {
-  type Input_generate_image_based_product_listing,
-  type Output_generate_image_based_product_listing,
+  type InputGenerateImageBasedProductListing,
+  type OutputGenerateImageBasedProductListing,
 } from "@/generated";
 
 export function useGenerateImageBasedProductListing() {
@@ -11,17 +11,15 @@ export function useGenerateImageBasedProductListing() {
 
   const generateListing = async ({
     product_name,
-    taskFile,
-  }: Input_generate_image_based_product_listing) => {
+    file,
+  }: InputGenerateImageBasedProductListing & { file: File }) => {
     setIsLoading(true);
     setError(null);
 
     try {
       const formData = new FormData();
       formData.append("product_name", product_name);
-      if (taskFile) {
-        formData.append("taskFile", taskFile);
-      }
+      formData.append("taskFile", file);
 
       const response = await fetch("/tasks/product-listing", {
         method: "POST",
@@ -32,7 +30,7 @@ export function useGenerateImageBasedProductListing() {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      const data: Output_generate_image_based_product_listing =
+      const data: OutputGenerateImageBasedProductListing =
         await response.json();
       return data;
     } catch (err) {

@@ -6,11 +6,11 @@ import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
 import { Card } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { Output_prd_analysis } from "@/generated";
+import { type OutputPRDAnalysis } from "@/generated";
 
 export function PrdAnalysisForm() {
   const { analyzePrd, isLoading, error } = useAnalyzePrd();
-  const [result, setResult] = useState<Output_prd_analysis["response"] | null>(
+  const [result, setResult] = useState<OutputPRDAnalysis["response"] | null>(
     null
   );
 
