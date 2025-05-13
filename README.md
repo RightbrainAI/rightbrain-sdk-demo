@@ -5,7 +5,7 @@ This repository demonstrates how to integrate the Rightbrain SDK and CLI into a 
 ## Prerequisites
 
 - Node.js 18 or later
-- npm, yarn, or pnpm
+- pnpm
 - A Rightbrain account with API credentials
 
 ## Setup
@@ -14,7 +14,7 @@ This repository demonstrates how to integrate the Rightbrain SDK and CLI into a 
 2. Install dependencies:
 
 ```bash
-npm install
+pnpm install
 ```
 
 3. Copy `.env.example` to `.env.local` and fill in your Rightbrain credentials:
@@ -32,13 +32,13 @@ RB_OAUTH2_TOKEN_PATH=/oauth/token
 4. Run the setup script to create the required Rightbrain tasks:
 
 ```bash
-npm run populate-tasks
+pnpm run populate-tasks
 ```
 
 5. Run the generate script to generate the rightbrain client via the CLI
 
 ```bash
-npm run generate-sdk
+pnpm run generate-sdk
 ```
 
 ## Key Components
@@ -60,7 +60,7 @@ const config: Config = {
 };
 ```
 
-The config uses Next.js's environment loading to safely access your credentials. The CLI will use this configuration to generate type-safe SDK code in the `src/generated` directory.
+The CLI will use this configuration to generate type-safe SDK code in the `src/generated` directory.
 
 ### 2. Authentication
 
@@ -162,7 +162,7 @@ The form component demonstrates how to use the hook and handle the API response:
 Run the development server:
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 Visit [http://localhost:3000](http://localhost:3000) to see the application.

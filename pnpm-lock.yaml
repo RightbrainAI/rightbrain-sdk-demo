@@ -21,11 +21,11 @@ importers:
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.0.3(@types/react@19.0.7))(@types/react@19.0.7)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@rightbrain/cli':
-        specifier: ^0.1.0
-        version: 0.1.0(@types/node@20.17.14)(typescript@5.7.3)
+        specifier: ^0.1.1
+        version: 0.1.1(@types/node@20.17.14)(typescript@5.7.3)
       '@rightbrain/sdk':
-        specifier: ^0.1.0
-        version: 0.1.0
+        specifier: ^0.1.1
+        version: 0.1.1
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -539,12 +539,12 @@ packages:
       '@types/react':
         optional: true
 
-  '@rightbrain/cli@0.1.0':
-    resolution: {integrity: sha512-X87NPT+iwQjhg0xYfoU00P1YLoQtjEffEiJWp58eJH1ZmgufDdiDbQJa4Jt5VTkKhlS0OKDCbtncxkvaMWoZnA==}
+  '@rightbrain/cli@0.1.1':
+    resolution: {integrity: sha512-/rqgJHN94aTGWwUalOF7ppbIDtoOdwmCk+KyZnpjYIyDsxZg8hC+tzMtBcbD8JL3WE65irOgqbIWTtCAWvq78A==}
     hasBin: true
 
-  '@rightbrain/sdk@0.1.0':
-    resolution: {integrity: sha512-PrEweA/bzyAVRhvaMclS499acDxI+weidCIQfHaeLhe/spAkgkq82rqzwgIJj8eXenFOWjCpiwyt7GvgH56jdQ==}
+  '@rightbrain/sdk@0.1.1':
+    resolution: {integrity: sha512-MVYjSQO+AEG6d4+zpn5WBBB9TzF2qlzz5PqYx4HchDzFxXzIrmwD0OkXQ97VWJVSEiOz0Z2qSWXlso0cpA473Q==}
 
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
@@ -2383,9 +2383,9 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.0.7
 
-  '@rightbrain/cli@0.1.0(@types/node@20.17.14)(typescript@5.7.3)':
+  '@rightbrain/cli@0.1.1(@types/node@20.17.14)(typescript@5.7.3)':
     dependencies:
-      '@rightbrain/sdk': 0.1.0
+      '@rightbrain/sdk': 0.1.1
       commander: 11.1.0
       cosmiconfig: 8.3.6(typescript@5.7.3)
       cosmiconfig-typescript-loader: 5.1.0(@types/node@20.17.14)(cosmiconfig@8.3.6(typescript@5.7.3))(typescript@5.7.3)
@@ -2402,7 +2402,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@rightbrain/sdk@0.1.0': {}
+  '@rightbrain/sdk@0.1.1': {}
 
   '@rtsao/scc@1.1.0': {}
 

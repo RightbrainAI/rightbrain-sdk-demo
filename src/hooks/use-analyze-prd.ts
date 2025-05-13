@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { InputPRDAnalysis, OutputPRDAnalysis } from "@/generated";
-
+import { ToStringValues } from "@/lib/types";
 export function useAnalyzePrd() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
 
-  const analyzePrd = async ({ prd }: InputPRDAnalysis) => {
+  const analyzePrd = async ({ prd }: ToStringValues<InputPRDAnalysis>) => {
     setIsLoading(true);
     setError(null);
 
