@@ -4,6 +4,7 @@ import {
   type InputGenerateImageBasedProductListing,
   type OutputGenerateImageBasedProductListing,
 } from "@/generated";
+import { ToStringValues } from "@/lib/types";
 
 export function useGenerateImageBasedProductListing() {
   const [isLoading, setIsLoading] = useState(false);
@@ -12,7 +13,9 @@ export function useGenerateImageBasedProductListing() {
   const generateListing = async ({
     product_name,
     file,
-  }: InputGenerateImageBasedProductListing & { file: File }) => {
+  }: ToStringValues<InputGenerateImageBasedProductListing> & {
+    file: File;
+  }) => {
     setIsLoading(true);
     setError(null);
 
