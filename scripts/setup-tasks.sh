@@ -14,7 +14,7 @@ npx rightbrain create-task \
   --user-prompt "Based on the provided image for {product_name}, create a compelling product listing." \
   --model "gpt-4o-mini" \
   --output-format '{"product_title":{"type":"str","description":"Title of the product"},"product_categories":{"type":"list","description":"Suggested categories for the product"},"product_description":{"type":"str","description":"Description of the product"}}' \
-  --image-required
+  --image-required || true
 
 # Profile Image Verification Task
 echo "🔍 Creating Profile Verification task..."
@@ -25,7 +25,7 @@ npx rightbrain create-task \
   --user-prompt "Based on the provided image, determine if this is a valid profile photo." \
   --model "gpt-4o-mini" \
   --output-format '{"valid":{"type":"bool","description":"Is the photo valid"},"reason":{"type":"str","description":"Reason why the photo is or is not valid"}}' \
-  --image-required
+  --image-required || true
 
 # PRD Analysis Task
 echo "📋 Creating PRD Analysis task..."
@@ -35,6 +35,6 @@ npx rightbrain create-task \
   --system-prompt "You are a product and AI integration specialist. Your role is to analyze product requirement documents and identify opportunities for AI task automation using Rightbrain. Consider multimodal inputs (text/images), structured outputs, and integration points. Focus on practical, implementable solutions that align with Rightbrain's capabilities for text and image processing." \
   --user-prompt "Review the product requirement document {prd}. Based on your review, propose specific and relevant use cases for the Rightbrain API." \
   --model "gpt-4o" \
-  --output-format '{"use_cases":{"type":"list","description":"Names of potential use cases"},"input_type":{"type":"list","description":"Types of inputs required (text, image)"},"output_format":{"type":"list","description":"Desired outputs for each task"},"task_description":{"type":"list","description":"Brief description of each task"}}'
+  --output-format '{"use_cases":{"type":"list","description":"Names of potential use cases"},"input_type":{"type":"list","description":"Types of inputs required (text, image)"},"output_format":{"type":"list","description":"Desired outputs for each task"},"task_description":{"type":"list","description":"Brief description of each task"}}' || true
 
 echo "✅ Tasks setup complete!"
