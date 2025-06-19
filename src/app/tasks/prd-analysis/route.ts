@@ -14,7 +14,7 @@ export async function POST(request: Request) {
       });
     }
 
-    const rightbrain = RightBrainClient.getInstance({
+    const rightbrain = new RightBrainClient({
       accessToken: accessToken.token.access_token as string,
       baseUrl: process.env.RB_API_URL as string,
       organizationId: process.env.RB_ORG_ID as string,
