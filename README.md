@@ -43,11 +43,21 @@ Once created, click the `Client.env` button to copy the details (this will conta
 pnpm run populate-tasks
 ```
 
+You will now see 3 new tasks in your Rightbrain dashboard.
+
 5. Run the generate script to generate the rightbrain client via the CLI
 
 ```bash
 pnpm run generate-sdk
 ```
+
+6. Run the development server to spin up a local web app that demonstrates tasks working via the SDK:
+
+```bash
+pnpm run dev
+```
+
+Each time you use one of the demo apps, you will be able to see the raw API call within the task's run interface.
 
 ## Key Components
 
