@@ -29,6 +29,14 @@ RB_CLIENT_SECRET=your_client_secret
 RB_OAUTH2_TOKEN_PATH=/oauth/token
 ```
 
+You can create an Oauth 2.0 client in your [Rightbrain dash](https://app.rightbrain.ai/preferences?tab=api-clients):
+
+<img width="743" height="789" alt="Screenshot 2025-07-23 at 09 08 45" src="https://github.com/user-attachments/assets/c3bea789-580c-41a8-90e2-a4bd335d4ebd" />
+
+Once created, click the `Client.env` button to copy the details (this will contain the secret for a new client):
+
+<img width="1005" height="512" alt="Screenshot 2025-07-23 at 09 09 47" src="https://github.com/user-attachments/assets/469d1714-6b35-4952-8f33-19f8069699b3" />
+
 4. Run the setup script to create the required Rightbrain tasks:
 
 ```bash
