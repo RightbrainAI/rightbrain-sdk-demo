@@ -4,8 +4,8 @@ import { IndustryTabs } from "@/components/industry-tabs";
 
 export default function Home() {
   return (
-    <div className="p-8 pb-20 h-full">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start h-full">
+    <>
+      <main className="flex flex-col gap-4 row-start-2 items-center sm:items-start h-full grow">
         <h1 className="text-4xl font-bold flex items-center gap-2 w-full justify-center">
           Rightbrain
           <Image src="/logo.png" alt="Rightbrain Logo" width={64} height={64} />
@@ -69,6 +69,6 @@ export default function Home() {
           Go to rightbrain.ai →
         </a>
       </footer>
-    </div>
+    </>
   );
 }

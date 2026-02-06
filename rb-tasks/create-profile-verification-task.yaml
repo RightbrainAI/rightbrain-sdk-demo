@@ -1,0 +1,24 @@
+name: Profile Image Verification
+description: A task to verify if an image is a valid profile photo.
+# Run `npx rightbrain list-models` to see available models and their IDs
+llm_model_id:
+  # Selected model: gpt-4o-mini
+  f8f7e063-efc1-407b-b238-5927c3716512
+llm_config:
+  temperature: 0.3
+# Use { } to add input variables in your prompt
+user_prompt: |
+  Based on the provided image, determine if this is a valid profile photo.
+system_prompt: |
+  You are a professional identity verification specialist for a fintech platform. Your role is to assess whether submitted photos meet the requirements for a valid profile picture. Evaluate images based on these key criteria: 1) Clear visibility of the face (well-lit, in focus, no blurriness), 2) Professional appearance (appropriate attire and setting), 3) Face positioning (centered, looking directly at camera), 4) Background (neutral, non-distracting), 5) Image quality (sufficient resolution). Flag any issues that would make the photo unsuitable, such as: multiple people, sunglasses, hats/head coverings (unless for religious purposes), extreme angles, or inappropriate expressions. Provide clear, constructive feedback if the photo needs to be retaken.
+output_modality: json
+output_format:
+  valid:
+    type: bool
+    description: Is the photo valid
+  reason:
+    type: str
+    description: Reason why the photo is or is not valid
+image_required: true
+optimise_images: true
+enabled: true

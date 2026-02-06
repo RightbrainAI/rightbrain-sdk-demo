@@ -1,39 +1,38 @@
 "use client";
 
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { type OutputGenerateImageBasedProductListing } from "@/generated";
-import { useGenerateImageBasedProductListing } from "@/hooks/use-generate-image-based-product-listing";
+import { Label } from "@/components/ui/label";
+import { rb, taskIds } from "@/lib/rightbrain";
+import useTask from "@/lib/use-task";
 import { useState } from "react";
-import { Badge } from "./ui/badge";
-import { Button } from "./ui/button";
-import { Card } from "./ui/card";
-import { Label } from "./ui/label";
 
 export function ProductListingForm() {
   const [image, setImage] = useState<File | null>(null);
-  const { generateListing, isLoading, error } =
-    useGenerateImageBasedProductListing();
-  const [listing, setListing] = useState<
-    OutputGenerateImageBasedProductListing["response"] | null
-  >(null);
-  const [isProductCardView, setIsProductCardView] = useState(false);
+  const generateListing = useTask(
+    rb[taskIds.generateImageBasedProductListing].run,
+  );
 
   return (
     <>
-      {isProductCardView ? (
+      {generateListing.data?.response ? (
         <ProductCardView
           product={{
-            name: listing?.product_title ?? "",
-            description: listing?.product_description ?? "",
+            name: generateListing.data?.response?.product_title ?? "",
+            description:
+              generateListing.data?.response?.product_description ?? "",
             image: image ? URL.createObjectURL(image) : "",
-            categories: listing?.product_categories ?? [],
+            categories:
+              generateListing.data?.response?.product_categories ?? [],
           }}
-          setIsProductCardView={setIsProductCardView}
+          clearData={() => generateListing.reset()}
         />
       ) : (
         <form
-          className="flex flex-col gap-4 w-full max-w-md px-2"
-          onSubmit={async (e) => {
+          className="flex flex-col gap-4 w-full max-w-md px-2 mx-auto"
+          onSubmit={(e) => {
             e.preventDefault();
             const formData = new FormData(e.currentTarget);
 
@@ -44,14 +43,11 @@ export function ProductListingForm() {
               return;
             }
 
-            const response = await generateListing({
-              product_name: product_name as string,
-              file: taskFile,
+            generateListing.runTask({
+              inputs: { product_name: product_name.toString() },
+              files: [taskFile],
             });
             setImage(taskFile);
-
-            setListing(response.response);
-            setIsProductCardView(true);
           }}
         >
           <div className="flex flex-col gap-2">
@@ -73,15 +69,18 @@ export function ProductListingForm() {
               name="taskFile"
               required
               accept="image/*"
-              className="border rounded-md px-3 py-2 bg-transparent"
             />
           </div>
 
-          <Button type="submit">
-            {isLoading ? "Generating..." : "Generate Product Listing"}
+          <Button type="submit" disabled={generateListing.isPending}>
+            {generateListing.isPending
+              ? "Generating..."
+              : "Generate Product Listing"}
           </Button>
 
-          {error && <p>Error: {error.message}</p>}
+          {generateListing.error && (
+            <p>Error: {generateListing.error.message}</p>
+          )}
         </form>
       )}
     </>
@@ -95,13 +94,10 @@ interface ProductCardViewProps {
     image: string;
     categories: string[];
   };
-  setIsProductCardView: (isProductCardView: boolean) => void;
+  clearData: () => void;
 }
 
-function ProductCardView({
-  product,
-  setIsProductCardView,
-}: ProductCardViewProps) {
+function ProductCardView({ product, clearData }: ProductCardViewProps) {
   const locale =
     typeof window !== "undefined" ? window.navigator.language : "en-US";
   return (
@@ -172,10 +168,7 @@ function ProductCardView({
 
             <div className="mt-6 flex gap-2">
               <Button type="button">Add to bag</Button>
-              <Button
-                variant="secondary"
-                onClick={() => setIsProductCardView(false)}
-              >
+              <Button variant="secondary" onClick={() => clearData()}>
                 Back to Form
               </Button>
             </div>

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://app.rightbrain.ai/cli/schema.json",
+  "orgId": "${RB_ORG_ID}",
+  "projectId": "${RB_PROJECT_ID}",
+  "apiKey": "${RB_API_KEY}",
+  "taskIds": [
+    /* Profile Image Verification */ "019c313c-b06a-e376-7137-1d9b68d1efaa",
+    /* Generate Image-Based Product Listing */ "019c313c-ab11-be2f-d178-9024b1194845",
+    /* PRD Analysis */ "019c313c-a59d-b10d-fabb-ed09accc4608"
+  ]
+}

@@ -1,0 +1,28 @@
+name: PRD Analysis
+description: A task to analyze PRD documents and suggest Rightbrain tasks.
+# Run `npx rightbrain list-models` to see available models and their IDs
+llm_model_id:
+  # Selected model: gpt-4o-mini
+  f8f7e063-efc1-407b-b238-5927c3716512
+llm_config:
+  temperature: 0.3
+# Use { } to add input variables in your prompt
+user_prompt: |
+  Review the product requirement document {prd}. Based on your review, propose specific and relevant use cases for the Rightbrain API.
+system_prompt: |
+  You are a product and AI integration specialist. Your role is to analyze product requirement documents and identify opportunities for AI task automation using Rightbrain. Consider multimodal inputs (text/images), structured outputs, and integration points. Focus on practical, implementable solutions that align with Rightbrain's capabilities for text and image processing.
+output_modality: json
+output_format:
+  use_cases:
+    type: list
+    description: Names of potential use cases
+  input_type:
+    type: list
+    description: Types of inputs required (text, image)
+  output_format:
+    type: list
+    description: Desired outputs for each task
+  task_description:
+    type: list
+    description: Brief description of each task
+enabled: true

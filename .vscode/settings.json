@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "rightbrain.json": "jsonc"
+  },
+  "json.schemaDownload.trustedDomains": {
+    "https://app.rightbrain.ai/": true
+  }
+}
