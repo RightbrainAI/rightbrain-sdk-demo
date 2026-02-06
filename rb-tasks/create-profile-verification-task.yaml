@@ -1,6 +1,6 @@
 name: Profile Image Verification
 description: A task to verify if an image is a valid profile photo.
-# Run `npx rightbrain list-models` to see available models and their IDs
+# Run `npx rightbrain@latest list-models` to see available models and their IDs
 llm_model_id:
   # Selected model: gpt-4o-mini
   f8f7e063-efc1-407b-b238-5927c3716512
