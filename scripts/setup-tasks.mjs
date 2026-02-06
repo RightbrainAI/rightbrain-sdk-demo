@@ -1,10 +1,7 @@
 #!/usr/bin/env node
 
-import { execSync } from "child_process";
+import { spawnSync } from "child_process";
 import { appendFileSync } from "fs";
-import jq from "node-jq";
-
-const envFile = ".env";
 
 const tasks = [
   {
@@ -25,22 +22,21 @@ console.log("🚀 Setting up Rightbrain tasks...\n");
 
 for (const { envVar, file } of tasks) {
   try {
-    const output = execSync(
-      `npx rightbrain@latest create-task --file ${file}`,
-      {
-        encoding: "utf-8",
-      },
-    );
-    const taskId = (
-      await jq.run(".id", output, { input: "string", output: "string" })
-    )
-      .trim()
-      .replace(/"/g, "");
-    appendFileSync(envFile, `${envVar}=${taskId}\n`);
+    const result = spawnSync("rightbrain", ["create-task", "--file", file], {
+      encoding: "utf-8",
+      stdio: ["inherit", "pipe", "inherit"],
+    });
+
+    if (result.status !== 0) {
+      throw new Error(`Command exited with code ${result.status}`);
+    }
+
+    const taskId = JSON.parse(result.stdout).id;
+    appendFileSync(".env", `${envVar}=${taskId}\n`);
     console.log(`✅ ${envVar}=${taskId}`);
   } catch (error) {
     console.error(`❌ Failed: ${file} - ${error.message}`);
   }
 }
 
-console.log(`\n📝 Task IDs added to ${envFile}`);
+console.log(`\n📝 Task IDs added to .env`);

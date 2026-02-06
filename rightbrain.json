@@ -4,8 +4,8 @@
   "projectId": "${RB_PROJECT_ID}",
   "apiKey": "${RB_API_KEY}",
   "taskIds": [
-    /* Profile Image Verification */ "019c313c-b06a-e376-7137-1d9b68d1efaa",
-    /* Generate Image-Based Product Listing */ "019c313c-ab11-be2f-d178-9024b1194845",
-    /* PRD Analysis */ "019c313c-a59d-b10d-fabb-ed09accc4608"
+    /* Profile Image Verification */ "${NEXT_PUBLIC_PROFILE_IMAGE_VERIFICATION_TASK_ID}",
+    /* Generate Image-Based Product Listing */ "${NEXT_PUBLIC_GENERATE_IMAGE_BASED_PRODUCT_LISTING_TASK_ID}",
+    /* PRD Analysis */ "${NEXT_PUBLIC_PRD_ANALYSIS_TASK_ID}"
   ]
 }
