@@ -22,10 +22,15 @@ console.log("🚀 Setting up Rightbrain tasks...\n");
 
 for (const { envVar, file } of tasks) {
   try {
-    const result = spawnSync("rightbrain", ["create-task", "--file", file], {
-      encoding: "utf-8",
-      stdio: ["inherit", "pipe", "inherit"],
-    });
+    const result = spawnSync(
+      "npx",
+      ["--yes", "rightbrain@latest", "create-task", "--file", file],
+      {
+        encoding: "utf-8",
+        stdio: ["inherit", "pipe", "inherit"],
+        shell: true,
+      },
+    );
 
     if (result.status !== 0) {
       throw new Error(`Command exited with code ${result.status}`);
@@ -33,10 +38,8 @@ for (const { envVar, file } of tasks) {
 
     const taskId = JSON.parse(result.stdout).id;
     appendFileSync(".env", `${envVar}=${taskId}\n`);
-    console.log(`✅ ${envVar}=${taskId}`);
+    console.log(`📝 Task ID \`${envVar}=${taskId}\` added to .env`);
   } catch (error) {
     console.error(`❌ Failed: ${file} - ${error.message}`);
   }
 }
-
-console.log(`\n📝 Task IDs added to .env`);
