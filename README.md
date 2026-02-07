@@ -1,50 +1,77 @@
-# Rightbrain integration with Next.js App Router (TypeScript)
+# RightBrain SDK Demo
+
+A Next.js App Router example demonstrating `@rightbrain/sdk` integration with TypeScript.
+
+---
+
+## Project Structure
+
+```
+src/
+  app/
+    api/tasks/route.ts    # Server-side proxy endpoint
+    page.tsx              # Demo UI
+  components/
+    prd-analysis-form.tsx           # Text-only task example
+    profile-photo-verification-form.tsx  # Image task example
+    product-listing-form.tsx        # Text + image task example
+  lib/
+    rightbrain.ts         # SDK client setup
+    use-task.ts           # React hook for task execution
+rb-tasks/                 # YAML task definitions
+rightbrain.json           # CLI configuration
+```
+
+---
 
 ## Setup
 
-1. Clone this repository & Install dependencies:
+### 1. Install dependencies
 
 ```bash
 pnpm install
 ```
 
-2. Authenticate the Rightbrain CLI:
+### 2. Authenticate with RightBrain
 
 ```bash
 npx rightbrain@latest login
 ```
 
-3. Create tasks in your project for demo purposes:
+### 3. Create demo tasks
 
 ```bash
 pnpm setup-tasks
 ```
 
-This will create 3 tasks in your Rightbrain dashboard and automatically append the task IDs to your `.env` file.
+Creates three tasks in your RightBrain project and appends task IDs to `.env`.
 
-4. Initialize the Rightbrain CLI with your project configuration and select the tasks you just created (It will show warning about config file already existing, you can ignore that):
+### 4. Initialize configuration
 
 ```bash
 npx rightbrain@latest init
 ```
 
-5. Generate TypeScript types for type-safe task integration:
+Select the tasks created in step 3. Ignore the warning about existing config file.
+
+### 5. Start development server
 
 ```bash
-npx rightbrain@latest generate
+pnpm dev
 ```
 
-> **Warning:** If you set up tasks with different names than the defaults, you may need to fix some TypeScript errors in the component files that reference these task types.
+---
 
-6. Run the development server to spin up a local web app that demonstrates tasks working:
+**TypeScript errors after setup:**
 
-```bash
-pnpm run dev
-```
+If you renamed tasks during creation, the generated types may not match. Either:
 
-Each time you use one of the demo apps, you will be able to see the raw API call within the task's run interface.
+- Re-run `npx rightbrain@latest generate` after ensuring task names match
+- Update component files to use the correct generated type names
+
+---
 
 ## Learn More
 
-- [Rightbrain Documentation](https://docs.rightbrain.ai)
+- [RightBrain Documentation](https://docs.rightbrain.ai)
 - [Next.js Documentation](https://nextjs.org/docs)
