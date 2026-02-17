@@ -1,11 +1,9 @@
 import { Client, PublicTransport } from "@rightbrain/sdk";
-import { TaskIds, tasks } from "@rightbrain/sdk/generated";
+import { type Tasks, TaskIds } from "../generated";
 
-const client = new Client({
+export const rb = new Client<Tasks>({
   transport: new PublicTransport({ baseUrl: "/api/tasks" }),
 });
-
-export const rb = tasks(client);
 
 export const taskIds = {
   prdAnalysis: process.env

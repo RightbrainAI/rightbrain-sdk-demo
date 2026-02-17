@@ -21,8 +21,8 @@ importers:
         specifier: ^1.1.13
         version: 1.1.13(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@rightbrain/sdk':
-        specifier: 0.3.0-beta.3
-        version: 0.3.0-beta.3
+        specifier: 0.3.0-beta.5
+        version: 0.3.0-beta.5
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -656,8 +656,8 @@ packages:
       '@types/react':
         optional: true
 
-  '@rightbrain/sdk@0.3.0-beta.3':
-    resolution: {integrity: sha512-1eg1lbGY+skc6Ml/CFZupLzzmxjxZps6BsnpxCzvfwVT1lh95Lmh2esSBX7Ndteo3LvcciScc2Pn53iWpCHXEA==}
+  '@rightbrain/sdk@0.3.0-beta.5':
+    resolution: {integrity: sha512-ZERoMsltlCQBAWIbM3cHf80zkNmxqAs5oPF3PIdCKV9alCMrAn7mnrBkRVw33UznY+qbEbRWgEHmPirzs4I0KA==}
 
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
@@ -2704,7 +2704,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.2.13
 
-  '@rightbrain/sdk@0.3.0-beta.3': {}
+  '@rightbrain/sdk@0.3.0-beta.5': {}
 
   '@rtsao/scc@1.1.0': {}
 
