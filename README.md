@@ -70,18 +70,30 @@ pnpm dev
 
 ---
 
+## Running the Direct Transport Example
+
+The `direct-transport/` directory contains a standalone Node.js script that uses `DirectTransport` to call a task without a server-side proxy. It requires the same env vars as the Next.js app plus `dotenvx` (already a dependency).
+
+```bash
+pnpm direct-transport
+```
+
+This reads from `.env` and runs the `GenerateImageBasedProductListing` task against a bundled sample image.
+
+---
+
 ## Troubleshooting
 
 **TypeScript errors after setup:**
 
 If you renamed tasks during creation, the generated types may not match. Either:
 
-- Re-run `npx rightbrain@latest generate` after ensuring task names match
+- Re-run `pnpm generate-tasks` after ensuring task names match
 - Update component files to use the correct generated type names
 
 **Missing environment variables:**
 
-Ensure your `.env` file contains all required variables. The `setup-tasks` script should populate task IDs automatically, but `RB_ORG_ID`, `RB_PROJECT_ID`, and `RB_API_KEY` must be set via `npx rightbrain@latest login` and then `npx rightbrain@latest init`.
+Ensure your `.env` file contains all required variables. The `setup-tasks` script populates the `NEXT_PUBLIC_*_TASK_ID` vars automatically. `RB_ORG_ID`, `RB_PROJECT_ID`, and `RB_API_KEY` are written by `npx rightbrain@latest login` and `npx rightbrain@latest init`.
 
 ---
 
