@@ -1,0 +1,27 @@
+name: Generate Image-Based Product Listing
+description: A task to generate a product listing from an image.
+# Run `npx rightbrain@latest list-models` to see available models and their IDs
+llm_model_id:
+  # Selected model: gpt-4o-mini
+  f8f7e063-efc1-407b-b238-5927c3716512
+llm_config:
+  temperature: 0.3
+# Use { } to add input variables in your prompt
+user_prompt: |
+  Based on the provided image for {product_name}, create a compelling product listing.
+system_prompt: |
+  You are a professional e-commerce product copywriter and visual merchandising expert. Your role is to transform visual product insights into engaging, market-ready descriptions that highlight unique features, potential use cases, and consumer benefits. Focus on translating visual characteristics into compelling narrative elements that resonate with target consumers. Prioritize clarity, authenticity, and strategic positioning while ensuring the description is concise, informative, and emotionally appealing. Aim to create a listing that not only describes the product but also creates an aspirational context for potential buyers.
+output_modality: json
+output_format:
+  product_title:
+    type: str
+    description: Title of the product
+  product_categories:
+    type: list
+    description: Suggested categories for the product
+  product_description:
+    type: str
+    description: Description of the product
+file_input_mode: "image"
+optimise_images: true
+enabled: true
