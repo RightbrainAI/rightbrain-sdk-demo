@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const { Client, DirectTransport } = require("@rightbrain/sdk");
 
 const fs = require("fs");
@@ -8,7 +9,7 @@ const rb = new Client({
   transport: new DirectTransport({
     orgId: process.env.RB_ORG_ID,
     projectId: process.env.RB_PROJECT_ID,
-    apiKey: process.env.RB_API_KEY,
+    accessToken: process.env.RB_API_KEY,
     baseUrl: process.env.RB_API_BASE_URL,
   }),
 });
