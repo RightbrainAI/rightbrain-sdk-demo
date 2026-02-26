@@ -22,6 +22,6 @@ output_format:
   product_description:
     type: str
     description: Description of the product
-image_required: true
+file_input_mode: "image"
 optimise_images: true
 enabled: true

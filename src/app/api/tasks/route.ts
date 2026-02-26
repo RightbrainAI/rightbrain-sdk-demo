@@ -6,7 +6,7 @@ export async function POST(request: Request) {
       {
         orgId: process.env.RB_ORG_ID!,
         projectId: process.env.RB_PROJECT_ID!,
-        apiKey: process.env.RB_API_KEY!,
+        accessToken: process.env.RB_API_KEY!,
         baseUrl: process.env.RB_API_BASE_URL,
       },
       await request.formData(),

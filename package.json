@@ -6,15 +6,16 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "setup-tasks": "node scripts/setup-tasks.mjs"
+    "lint": "eslint src",
+    "setup-tasks": "node scripts/setup-tasks.mjs",
+    "generate-tasks": "npx rightbrain@latest generate"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
     "@radix-ui/react-label": "^2.1.8",
     "@radix-ui/react-slot": "^1.2.4",
     "@radix-ui/react-tabs": "^1.1.13",
-    "@rightbrain/sdk": "0.3.0-beta.5",
+    "@rightbrain/sdk": "0.3.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.563.0",

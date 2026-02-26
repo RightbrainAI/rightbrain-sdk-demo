@@ -19,6 +19,6 @@ output_format:
   reason:
     type: str
     description: Reason why the photo is or is not valid
-image_required: true
+file_input_mode: "image"
 optimise_images: true
 enabled: true

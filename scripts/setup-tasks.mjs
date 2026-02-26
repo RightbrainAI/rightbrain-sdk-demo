@@ -24,7 +24,7 @@ for (const { envVar, file } of tasks) {
   try {
     const result = spawnSync(
       "npx",
-      ["--yes", "rightbrain@latest", "create-task", "--file", file],
+      ["--yes", "rightbrain@latest", "task", "create", "--file", file],
       {
         encoding: "utf-8",
         stdio: ["inherit", "pipe", "inherit"],
